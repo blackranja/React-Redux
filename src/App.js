@@ -4,7 +4,9 @@ import Navbar from './components/Navbar';
 
 const App = () => {
   return (
-    <div><Navbar /></div>
+    <div className="min-w-screen h-screen">
+      <Navbar />
+    </div>
   )
 }
 
