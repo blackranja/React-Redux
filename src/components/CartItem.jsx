@@ -4,7 +4,7 @@ import { FaChevronUp, FaChevronDown } from 'react-icons/fa';
 const CartItem = ({ id, img, title, price, amount }) => {
     
   return (
-      <div className="w-screen flex justify-between">
+      <div className="w-full flex justify-between">
        
               <img className="object-cover w-48 h-48" src={img} alt={title} />
            
