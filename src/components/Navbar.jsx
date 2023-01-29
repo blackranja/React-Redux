@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { AiOutlineClose } from "react-icons/ai";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { GiHamburgerMenu,GiShoppingCart } from "react-icons/gi";
 import logo from "../logo.svg";
 
 //const title = "RanjaRedux";
@@ -10,17 +11,23 @@ const NavbarItems = ({ title, classProps }) => (
     </li>
 );
 const Navbar = () => {
+  console.log(useSelector((store) => { console.log(store); }))
+  const  amount  = useSelector((store) => store.cart.amount);
+  console.log(`the amount is ${amount}`);
   const [toggleMenu, setToggleMenu] = useState(false);
   return (
     <nav className="w-full flex md:justigy-center justify-between items-center p-4 gradient-bg-welcome">
       <div className="md:flex-[0.5] flex-initial justify-center items-center">
-        <img src={logo} alt="logo" width="25" className="cursor-pointer" />
+        <img src={logo} alt="logo" width="30" className="cursor-pointer" />
         
       </div>
       <ul className="text-white md:flex hidden list-none flex-row justify-between items-center flex-initail">
         {["Market", "Exchange", "Tutorials", "Wallets"].map((item, index) => (
           <NavbarItems key={item + index} title={item} />
         ))}
+        <li className="g-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]">
+          <span><GiShoppingCart size={40} />{amount}</span>
+        </li>
         <li className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]">
           Login
         </li>
