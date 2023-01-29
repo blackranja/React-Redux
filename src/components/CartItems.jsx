@@ -20,7 +20,7 @@ const CartItems = () => {
           <div className="w-screen h-full flex">
               <h1 className="font-bold w-full text-gradient pt-8 text-4xl items-center text-center">Your Bag</h1>
           </div>
-          <div className="w-screen h-full flex">
+          <div className="w-screen flex">
               {cartItems.map((item) => {
                   return (
                       <CartItem key={item.id} {...item} />

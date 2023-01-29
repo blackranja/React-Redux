@@ -4,21 +4,21 @@ import { FaChevronUp, FaChevronDown } from 'react-icons/fa';
 const CartItem = ({ id, img, title, price, amount }) => {
     
   return (
-      <div className="w-screen flex justity-between">
+      <div className="w-screen flex justify-between">
        
               <img className="object-cover w-48 h-48" src={img} alt={title} />
            
-              <div className="text-[#ffffff] flex w-full h-full">
-                  <h4 className="font-bold text-gradient">{title}</h4>
-                  <h4 className="font-bold text-gradient">${price}</h4>
-                  <button className="rounded-md p-3 m-3 bg-[#ffccffcc] text-[#ffffff]">remove</button>
+              <div className="text-[#ffffff] w-full items-center justify-between">
+                  <h4 className="font-bold text-gradient px-4">{title}</h4>
+                  <h4 className="font-bold text-gradient px-4">${price}</h4>
+                  <button className="rounded-md m-2 p-2 bg-[#ffccffcc] text-[#ffffff]">remove</button>
               </div>
-              <div>
-                  <button className="">
+              <div className="text-[#ffffff] w-full items-center justify-between">
+                  <button className="rounded-md m-2 p-2 bg-[#ffccffcc] text-[#ffffff]">
                       <FaChevronUp/>
                   </button>
-                  <p className="amount">{amount}</p>
-                  <button className="">
+                  <p className="">{amount}</p>
+                  <button className="rounded-md m-2 p-2 bg-[#ffccffcc] text-[#ffffff]">
                       <FaChevronDown/>
                   </button>
               </div>
