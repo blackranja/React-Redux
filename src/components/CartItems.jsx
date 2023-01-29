@@ -27,13 +27,13 @@ const CartItems = () => {
                   );
               })}
           </div>
-          <div>
+          <div className="text-[#ffffff] w-full items-center justify-between">
               <hr />
-              <h4>
+              <h4 className="font-bold text-gradient px-4">
                   total<span>${total}</span>
               </h4>
           </div>
-          <button className="">Clear Cart</button>
+          <button className="rounded-md m-2 p-2 bg-[#ffccffcc] text-[#ffffff]">Clear Cart</button>
     </div>
   )
 }
