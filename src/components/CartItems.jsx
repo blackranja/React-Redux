@@ -21,12 +21,21 @@ const CartItems = () => {
               <h2>Your Bag</h2>
           </div>
           <div>
-              {cartItems.map((item,index)=>{
-                  <CartItem key={index} item={item}/>
+              {cartItems.map((item) => {
+                  return (
+                      <CartItem key={item.id} {...item} />
+                  );
               })}
           </div>
+          <div>
+              <hr />
+              <h4>
+                  total<span>${total}</span>
+              </h4>
+          </div>
+          <button className="">Clear Cart</button>
     </div>
   )
 }
 
-export default CartItems
+export default CartItems;
