@@ -3,13 +3,20 @@ import cartItems from "../../data/cartItems";
 
 const initialState = {
     cartItems: cartItems,
-    amount: 2,
+    amount: 5,
     total: 0,
     isLoading: true,
 };
 const cartSlice = createSlice({
     name: 'cart',
     initialState,
+    reducers: {
+        clearCart: (state) => {
+            state.cartItems = [];
+        }
+    },
 
 });
+//console.log(cartSlice);
+export const { clearCart } = cartSlice.actions;
 export default cartSlice.reducer;
