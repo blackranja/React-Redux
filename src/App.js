@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { calculateTotals } from './features/cart/cartSlice';
 import Modal from './components/Modal';
 const App = () => {
+  const { isOpen } = useSelector((store) => store.modal);
   const { cartItems } = useSelector((store) => store.cart);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -15,7 +16,7 @@ const App = () => {
     <div className="min-w-screen h-screen">
       <Navbar />
       <CartItems />
-      <Modal />
+      {isOpen && <Modal />}
     </div>
   )
 }

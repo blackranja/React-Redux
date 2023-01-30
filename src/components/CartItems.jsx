@@ -1,13 +1,14 @@
 import React from 'react';
 import CartItem from './CartItem';
 import { useDispatch,useSelector } from 'react-redux';
-import { clearCart } from '../features/cart/cartSlice';
-
+//import { clearCart } from '../features/cart/cartSlice';
+import { openModal,closeModal} from '../features/modal/modalSlice';
 const CartItems = () => {
     const dispatch = useDispatch();
     const { cartItems, total, amount } = useSelector((store) => store.cart);
 
     if (amount < 1) {
+        dispatch(closeModal());
         return (
             <div className="flex w-full h-full gradient-bg-welcome">
                 <div className="w-full h-full flex">
@@ -34,7 +35,7 @@ const CartItems = () => {
                   total<span className="pl-2">${total.toFixed(2)}</span>
               </h4>
               <button
-                  onClick={()=>dispatch(clearCart())}
+                  onClick={()=>dispatch(openModal())}
                   className="rounded-md m-2 p-2 bg-[#ffccffcc] text-[#ffffff]">Clear Cart</button>
           </div>
           
