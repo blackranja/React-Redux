@@ -31,7 +31,7 @@ const CartItems = () => {
           <div className="text-[#ffffff]">
               <hr />
               <h4 className="font-bold text-gradient px-4">
-                  total<span>${total}</span>
+                  total<span className="pl-2">${total.toFixed(2)}</span>
               </h4>
               <button
                   onClick={()=>dispatch(clearCart())}
