@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaChevronUp, FaChevronDown } from 'react-icons/fa';
-import { removeItem } from '../features/cart/cartSlice';
+import { removeItem,increase,decrease } from '../features/cart/cartSlice';
 import { useDispatch } from 'react-redux';
 
 const CartItem = ({ id, img, title, price, amount }) => {
@@ -23,12 +23,17 @@ const CartItem = ({ id, img, title, price, amount }) => {
               </button>
               </div>
               <div className="text-[#ffffff] w-full items-center justify-between">
-              <button
+              <button onClick={() => {
+                  dispatch(increase({ id }));
+                  }}
                   className="rounded-md m-2 p-2 bg-[#ffccffcc] text-[#ffffff]">
                       <FaChevronUp/>
                   </button>
                   <p className="">{amount}</p>
               <button
+                  onClick={() => {
+                      dispatch(decrease({ id }));
+                  }}
                   className="rounded-md m-2 p-2 bg-[#ffccffcc] text-[#ffffff]">
                       <FaChevronDown/>
                   </button>
