@@ -32,6 +32,9 @@ const CartItem = ({ id, img, title, price, amount }) => {
                   <p className="">{amount}</p>
               <button
                   onClick={() => {
+                      if (amount ===1) {
+                          dispatch(removeItem(id));
+                      }
                       dispatch(decrease({ id }));
                   }}
                   className="rounded-md m-2 p-2 bg-[#ffccffcc] text-[#ffffff]">
