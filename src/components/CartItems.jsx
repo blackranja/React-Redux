@@ -2,7 +2,7 @@ import React from 'react';
 import CartItem from './CartItem';
 import { useDispatch,useSelector } from 'react-redux';
 //import { clearCart } from '../features/cart/cartSlice';
-import { openModal,closeModal} from '../features/modal/modalSlice';
+import { openModal,closeModal } from '../features/modal/modalSlice';
 const CartItems = () => {
     const dispatch = useDispatch();
     const { cartItems, total, amount } = useSelector((store) => store.cart);
